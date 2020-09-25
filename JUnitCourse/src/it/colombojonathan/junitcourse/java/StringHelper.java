@@ -1,5 +1,5 @@
 package it.colombojonathan.junitcourse.java;
-//comment
+
 public class StringHelper {
 	
 	//AACD => CD	ACD => CD	CDEF => CDEF
