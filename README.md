@@ -1,2 +1,2 @@
 # JUnitCourse
-An example of JUnit Test
+An example of unit test in JUnit 4 
