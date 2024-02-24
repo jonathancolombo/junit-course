@@ -13,15 +13,13 @@ import org.junit.runners.Parameterized.Parameters;
 
 import it.colombojonathan.junitcourse.java.StringHelper;
 
-@RunWith (Parameterized.class)
+@RunWith(Parameterized.class)
 public class StringHelperParameterizedTest {
-
 
 	private StringHelper helper;
 	private String input;
 	private String expectedOutput;
-	
-	
+
 	public StringHelperParameterizedTest(String input, String expectedOutput) {
 		super();
 		this.input = input;
@@ -30,13 +28,11 @@ public class StringHelperParameterizedTest {
 
 	@Parameters
 	public static Collection<String[]> testConditions() {
-		String expectedOutputs[][] ={
-		{"AACD","CD"},
-		{"ACD","CD"} };
+		String expectedOutputs[][] = { { "AACD", "CD" }, { "ACD", "CD" } };
 		return Arrays.asList(expectedOutputs);
 	}
-	
-	@Before 
+
+	@Before
 	public void before() {
 		helper = new StringHelper();
 	}
@@ -45,24 +41,22 @@ public class StringHelperParameterizedTest {
 	public void testTruncateAInFirst2Positions() {
 		String actual = helper.truncateAInFirst2Positions(input);
 		String expected = expectedOutput;
-		assertEquals(expected,actual);
-		//expected, actual
+		assertEquals(expected, actual);
+		// expected, actual
 	}
-	
+
 	@Test
-	//metodi Test tutti VOID e PUBLIC!
-	//stesso metodo ma utilizzando il refactory e inline sulle variabili
-	//meglio cosi 
-	public void testTruncateAInFirst2Positions2(){
-		assertEquals(expectedOutput,
-				helper.truncateAInFirst2Positions(input));
+	// metodi Test tutti VOID e PUBLIC!
+	// stesso metodo ma utilizzando il refactory e inline sulle variabili
+	// meglio cosi
+	public void testTruncateAInFirst2Positions2() {
+		assertEquals(expectedOutput, helper.truncateAInFirst2Positions(input));
 	}
-	
-	//ABCD => FALSE		ABAB => TRUE	AB => TRUE	A => FALSE					
+
+	// ABCD => FALSE ABAB => TRUE AB => TRUE A => FALSE
 	@Test
 	public void testAreFirstAndLastTwoCharactersTheSame_BaseNegativeScenario() {
-		assertEquals(false,
-				helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+		assertEquals(false, helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
 	}
 
 	@Test
